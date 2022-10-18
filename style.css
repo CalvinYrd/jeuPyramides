@@ -1,0 +1,91 @@
+/* BASE */
+*, ::before, ::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+	scroll-behavior: smooth;
+}
+.d-flex {display: flex;}
+.align-items-center {align-items: center;}
+.justify-content-center {justify-content: center;}
+.justify-content-space-between {justify-content: space-between;}
+.justify-content-space-around {justify-content: space-around;}
+.justify-content-space-evenly {justify-content: space-evenly;}
+.justify-content-end {justify-content: end;}
+.flex-direction-column {flex-direction: column;}
+.height100 {height: 100vh;}
+.color-white {color: #fff;}
+/* STYLE */
+.pyramidsContainer {
+	width: 100%;
+}
+.pyramidsContainer .pyramid {
+	position: relative;
+	border-radius: 999px 999px 0 0;
+}
+.pyramidsContainer .pyramid,
+.pyramidsContainer .pyramid::before {
+	background: #630;
+}
+.pyramidsContainer .pyramid::before {
+	content: "";
+	position: absolute;
+	bottom: -20px;
+	width: 200px;
+	height: 20px;
+	border-radius: 999px;
+}
+.pyramidsContainer .pyramid .hoop {
+	animation: hoopAppears .2s both;
+	transform: translateY(-50000%);
+
+	opacity: .85;
+	border-radius: 999px;
+}
+.pyramidsContainer .pyramid p.libelle {
+	position: absolute;
+	bottom: -20px;
+	font-weight: 600;
+}
+.actionsButtons input {
+	padding: 15px 30px;
+	margin: 15px;
+}
+.chargement p {
+	position: relative;
+}
+.chargement p::before,
+.chargement p::after {
+	animation: blinks .35s alternate infinite;
+	content: ".";
+}
+.chargement p::before {
+	animation-delay: .2s;
+	position: absolute;
+	right: -5px;
+}
+
+
+
+@keyframes hoopAppears {
+	from {
+		transform: translateY(-50000%);
+	}
+	to {
+		transform: none;
+	}
+}
+@keyframes blinks {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+
+
+
+
